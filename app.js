@@ -76,6 +76,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/bootstrap'));
 
 // Run the server
-app.listen(3001);
-console.log('Listening on port 3001');
+var port = process.env.PORT || 3001;
+app.listen(port);
+console.log('Listening on port ' + port);
 
