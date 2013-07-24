@@ -1,0 +1,59 @@
+extends layout
+
+block content 
+    .main-box.well
+
+        h2 Downloads
+
+        p #{project} uses <a href="http://git-scm.com/">git</a> for version control of all source code, documentation and data. A central repository is hosted on <a href="http://github.com/BreakawayLabs/#{github}">GitHub</a>.
+
+        h3 Source Code
+
+        p The recommended method for accessing the source code is to use git to make a clone of the repository. This will allow you to easily contribute any changes back to the #{project} community. Alternatively, a zip file or tarball can be downloaded from the central repository.
+
+        h4 Users
+
+        p It is recommended that users of #{project} download the latest stable release (#{stable}). Use the following command to clone the latest release from git:
+
+        pre git clone git://github.com/BreakawayLabs/#{github}.git; cd #{github}; git checkout #{stable}
+
+        h4 Developers
+
+        p For developers who wish to make changes to the model and contribute back to the community, it is recommended that the latest development version of #{project} is downloaded. This version will contain changes which have not yet been released in a stable version, but may also contain issues which need resolving before release.
+
+        pre git clone git://github.com/BreakawayLabs/#{github}.git
+
+        h4 Official Releases
+
+        p The following official releases of #{project} are available.
+
+        table.table.table-bordered.table-striped
+            tr
+                th Version
+                th Git
+                th .zip
+                th .tar.gz
+            for release in releases
+                tr
+                    td #{release.name}
+                    td <a href="https://github.com/BreakawayLabs/#{github}/commit/#{release.commit}">#{release.commit}</a>
+                    td <a href="https://github.com/BreakawayLabs/#{github}/zipball/#{release.name}">link</a>
+                    td <a href="https://github.com/BreakawayLabs/#{github}/tarball/#{release.name}">link</a>
+
+        h3 Data
+
+        p The complete distribution of #{project} includes some large data files used for testing and examples. To save your bandwidth and keep source code checkouts fast, the data files are managed in a slightly different way to source code files.
+
+        p When you download #{project} using git, you will notice certain files are actually symlinks, for example
+
+        pre foo.nc -> ../../.git/annex/objects/jK/v7/WORM-s16009120-m1337754158--foo.nc/WORM-s16009120-m1337754158--foo.nc
+
+        p These files are managed by <a href="http://git-annex.branchable.com/">git-annex</a>, which allows the files to be kept under version control without needing to be downloaded every time the source code is cloned. As such, these symlinks will be "broken" when you first checkout the code.
+
+        p The contents of these files are stored in a cloud annex, using <a href="http://aws.amazon.com/s3">Amazon S3</a>. To access the files you need to download each file into a local annex. Before downloading any files it is recommended to run the following command to tell git not to bother trying to download the data from GitHub (since the data is not there anyway).
+
+        pre git config remote.origin.annex-ignore true
+        
+        p To download a particular file from the cloud annex, run the following command, replacing foo.nc with the file you want to get.
+
+        pre git annex get foo.nc

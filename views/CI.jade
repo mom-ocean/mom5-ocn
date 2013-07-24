@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .main-box.well
+
+        h1 Continuous Integration
+
+        p Each stable release of #{project} requires a large amount of testing. To keep track of the testing process during development, #{project} uses a proces known as continuous integration. Each time a change is checked in to the central version control repository, a comprehensive set of tests is run to ensure everything continues to work as expected. This ensures any bugs are detected early in the development cycle.
+
+        h2 Servers and Agents
+
+        p The continuous integration system uses an agent-server model. The server manages a list of build configurations, which are a series of test programs used to verify that the project is running as expected. These build configurations are executed by build agents, which may be running on different different systems to the server. This allows a variety of different software and hardware configurations to be tested.
+
+        h2 Contribute Build Agents
+
+        p If you have a specific system which you would like to run continuous integration on, please contact the support staff at Breakaway Labs.
