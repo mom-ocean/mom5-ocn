@@ -1,38 +1,19 @@
 @charset 'UTF-8';
 
-.main-box {
-    font-size: 14px;
+.nav-justified {
+  padding-top: 5px;
 }
 
-.main-box pre {
-    background-color: #d0d0d0;
-}
-
-.main-box h2 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.side-box {
-    font-size: 14px;
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.side-box h5 {
-    margin-top: 0px;
-}
 
 .box_icon {
   float: left;
   margin: 3px;
 }
 
-.twitter-follow-button {
+/*.twitter-follow-button {
     padding-top: 10px;
 }
-
+*/
 pre {
   overflow: auto;
   word-wrap: normal;

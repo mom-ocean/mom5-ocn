@@ -1,15 +1,16 @@
 extends layout
 
 block content 
-    .main-box.well
-        h3 #{project}
+    .main-box.panel.panel-default
+        .panel-heading
+            h2 About #{project}
+        .panel-body
+            p #{project_about}
 
-        p #{project_about}
+            h2 The Model Development Lab
 
-        h2 The Model Development Lab
+            p The Model Development Lab is a collection of tools and online development infrastructure provided as a service by <a href="http://www.breakawaylabs.com.au/">Breakaway Labs</a>.
 
-        p The Model Development Lab is a collection of tools and online development infrastructure provided as a service by <a href="http://www.breakawaylabs.com.au/">Breakaway Labs</a>.
+            p As a provider of products and services to the research community, Breakaway Labs strives to support an open and transparent development environment based on proven software engineering techniques.
 
-        p As a provider of products and services to the research community, Breakaway Labs strives to support an open and transparent development environment based on proven software engineering techniques.
-
-        p To find out more about how Breakaway Labs can help with your development and deployment of #{project}, visit our <a href="http://www.breakawaylabs.com.au/">website</a>.
+            p To find out more about how Breakaway Labs can help with your development and deployment of #{project}, visit our <a href="http://www.breakawaylabs.com.au/">website</a>.

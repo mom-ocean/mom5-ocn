@@ -1,38 +1,39 @@
 extends layout
 
 block content 
-    .main-box.well
-        .page-header
-            h1.text-center The #{project_title}
+    .main-box.panel.panel-default
+        .panel-heading
+            .page-header
+                h1.text-center The #{project_title}
 
+        .panel-body
+            p !{project_desc}
 
-        p !{project_desc}
+            h2 The Model Development Lab
 
-        h2 The Model Development Lab
+            p As a community driven open source research project, #{project} uses online software development tools to ensure all development is as open and transparent as possible. The <a href="web/about">Model Development Lab</a> is a collection of tools provided by <a href="http://www.breakawaylabs.com.au">Breakaway Labs</a> to facilitate fast and efficient development.
 
-        p As a community driven open source research project, #{project} uses online software development tools to ensure all development is as open and transparent as possible. The <a href="web/about">Model Development Lab</a> is a collection of tools provided by <a href="http://www.breakawaylabs.com.au">Breakaway Labs</a> to facilitate fast and efficient development.
+            h3 Quickstart
 
-        h3 Quickstart
+            p The current stable version of #{project} is #{stable}. The <a href="web/docs/project/quickstart">quickstart guide</a> will get you up and running today.
 
-        p The current stable version of #{project} is #{stable}. The <a href="web/docs/project/quickstart">quickstart guide</a> will get you up and running today.
+            h3 Download #{project}
 
-        h3 Download #{project}
+            p Stable and development versions of #{project} are available for <a href="web/downloads">download</a> via git or as tarballs.
 
-        p Stable and development versions of #{project} are available for <a href="web/downloads">download</a> via git or as tarballs.
+            h3 Request Features and Report Bugs
 
-        h3 Request Features and Report Bugs
+            p If you'd like to see a new feature, or have found a problem, please report it using the <a href="web/tasks">task tracking</a> system.
 
-        p If you'd like to see a new feature, or have found a problem, please report it using the <a href="web/tasks">task tracking</a> system.
+            h3 Check Current Development Status
 
-        h3 Check Current Development Status
+            p We never stop testing #{project}. Keep an eye on the current test status with the <a href="web/CI">continuous integration</a> system.
 
-        p We never stop testing #{project}. Keep an eye on the current test status with the <a href="web/CI">continuous integration</a> system.
+            h3 Read The Documentation
 
-        h3 Read The Documentation
+            p We want to make it easy for you to work with #{project}. Constantly evolving technical and scientific <a href="web/docs">documentation</a> in available for your reading pleasure.
 
-        p We want to make it easy for you to work with #{project}. Constantly evolving technical and scientific <a href="web/docs">documentation</a> in available for your reading pleasure.
+            h3 Get in Contact
 
-        h3 Get in Contact
-
-        p If you want to get in contact with the other users and developers then please check in with the #{project} <a href="https://groups.google.com/forum/#!forum/{data.google_groups}">mailing list</a>.
+            p If you want to get in contact with the other users and developers then please check in with the #{project} <a href="https://groups.google.com/forum/#!forum/{data.google_groups}">mailing list</a>.
 

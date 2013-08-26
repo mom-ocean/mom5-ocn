@@ -1,30 +1,33 @@
 extends layout
 
 block content
-    .main-box.well
-        h1 Documentation
+    .main-box.panel.panel-default
+        .panel-heading
+            h2 Documentation
+        .panel-body
+            h2 #{project} Project Docs
 
-        h2 #{project} Project Docs
+            ul
+                each doc in web_docs
+                    li
+                        a(href="#{doc.url}") #{doc.name}
+                each doc in pdf_docs
+                    li <a href="docs/project/#{doc.filename}")>#{doc.name}</a> [PDF]
 
-        ul
-            each doc in web_docs
-                li
-                    a(href="#{doc.url}") #{doc.name}
-            each doc in pdf_docs
-                li <a href="docs/project/#{doc.filename}")>#{doc.name}</a> [PDF]
+            h2 Model Development Lab Docs
 
-        h2 Model Development Lab Docs
+            p These documents will help you use those parts of the Model Development Lab which are not specific to #{project}.
 
-        p These documents will help you use those parts of the Model Development Lab which are not specific to #{project}.
-
-        ul
-            each doc in other_docs
-                li
-                    a(href="#{doc.url}") #{doc.name}
+            ul
+                each doc in other_docs
+                    li
+                        a(href="#{doc.url}") #{doc.name}
 
 
-        h2 Documentation Development
+            h2 Documentation Development
 
-        p The documentation for #{project} is just as important as the code itself. Where feasible, the source of all documentation is developed alongside the code within the main repository. This allows developers to keep it up to date as part of their regular work flow.
+            p The documentation for #{project} is just as important as the code itself. Where feasible, the source of all documentation is developed alongside the code within the main repository. This allows developers to keep it up to date as part of their regular work flow.
 
-        p If you find something incomplete, incorrect or incomprehensible, please report this as an issue on the <a href="http://mom-ocean.org/web/tasks">task tracker</a>.
+            p If you find something incomplete, incorrect or incomprehensible, please report this as an issue on the <a href="http://mom-ocean.org/web/tasks">task tracker</a>.
+
+            include ../public/docs/project/quickstart.md

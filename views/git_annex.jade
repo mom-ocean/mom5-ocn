@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    .main-box.panel.panel-default
+        .panel-heading
+            h2 Introduction to Git-Annex
+        .panel-body
+
+          p #{project} includes a number of large data files used for test cases and examples. It is desirable to keep these files under version control with git, however including them in the respository would mean every user had to download <emph>all</emph> the data just to get access to the source coude.
+
+          p The problem of maintaining data files under version control while not requiring large downloads on checkout is solved using <a href="http://git-annex.branchable.com/">git-annex</a>.
+
+          p The contents of large data files are stored in a <emph>remote annex</emph> in the cloud. When a user needs the contents of a file, it can be downloaded into a <emph>local annex</emph> with a single command. In this way, large files are only downloaded if and when they are needed.
+
+          p Files which are stored using git-annex can be identified as symlinks of the following form:
+
+          pre lrwxrwxrwx 1 timl timl  140 Jun 15 22:00 &lt;filename&gt; -&gt; .git/annex/objects/&lt;git-annex-magic&gt;
+
+          p The file is stored as a symlink which points into the local annex. When a repo is first checked out, the local annex does not contain any data, and so these symlinks will appear as <emph>dangling symlinks</emph>. To populate the local annex, the files must be downloaded from the remote annex. This is done using the command:
+
+          pre git annex get &lt;filename&gt;
+          
+          p The file will be downloaded to the local annex and the symlink will point to this location.
+
+          h2 Installing Git-Annex
+            
+          p git-annex is available on most Unix based platforms. Please check the <a href="http://git-annex.branchable.com/install/">git-annex installation page</a> for details on how to install it on your system.
+

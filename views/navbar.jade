@@ -1,38 +1,43 @@
 .navbar.navbar-static-top.navbar-inverse
-  .navbar-inner
-    .container
-      .span10.offset1
-        a.brand(href="/") #{project_title}
-        ul.nav.nav-pills
-          li(class=page === "downloads" ? "active" : undefined)
-            a(href="/downloads") Downloads
-          li(class=page === "tasks" ? "active" : undefined)
-            a(href="/tasks") Tasks
-          li(class=page === "CI" ? "active" : undefined)
-            a(href="/CI") CI
-          li.dropdown(class=page === "docs" ? "active" : undefined)
-            a(href="#", class="dropdown-toggle", data-toggle="dropdown") Docs <b class="caret"></b>
-            ul.dropdown-menu
+  .col-md-10.col-md-offset-1
+    .navbar-header
+      a.navbar-brand(href="/web") #{project_title}
+      button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-ex1-collapse")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      ul.nav.nav-pills.nav-justified
+        li(class=root_page === "downloads" ? "active" : undefined)
+          a(href="/web/downloads") Downloads
+        li(class=root_page === "tasks" ? "active" : undefined)
+          a(href="/web/tasks") Tasks
+        li(class=root_page === "CI" ? "active" : undefined)
+          a(href="/web/CI") CI
+        li.dropdown(class=root_page === "docs" ? "active" : undefined)
+          a(href="#", class="dropdown-toggle", data-toggle="dropdown") Docs <b class="caret"></b>
+          ul.dropdown-menu
+            li(role="presentation")
+              a(role="menuitem", href="/web/docs") Documentation Home
+            li.divider(role="presentation")
+            li(role="presentation")
+              p.nav-header(role="menuitem") Web Documents
+            each doc in web_docs
               li(role="presentation")
-                a(role="menuitem", href="/docs") Documentation Home
-              li.divider(role="presentation")
+                a(role="menuitem", href="#{doc.url}") #{doc.name}
+            li.divider(role="presentation")
+            li(role="presentation")
+              p.nav-header(role="menuitem") PDF Documents
+            each doc in pdf_docs
               li(role="presentation")
-                p.nav-header(role="menuitem") Web Documents
-              each doc in web_docs
-                li(role="presentation")
-                  a(role="menuitem", href="#{doc.url}") #{doc.name}
-              li.divider(role="presentation")
+                a(role="menuitem", href="/web/docs/project/#{doc.filename}") #{doc.name}
+            li.divider(role="presentation")
+            li(role="presentation")
+              p.nav-header(role="menuitem") Other Documents
+            each doc in other_docs
               li(role="presentation")
-                p.nav-header(role="menuitem") PDF Documents
-              each doc in pdf_docs
-                li(role="presentation")
-                  a(role="menuitem", href="/docs/project/#{doc.filename}") #{doc.name}
-              li.divider(role="presentation")
-              li(role="presentation")
-                p.nav-header(role="menuitem") Other Documents
-              each doc in other_docs
-                li(role="presentation")
-                  a(role="menuitem", href="#{doc.url}") #{doc.name}
+                a(role="menuitem", href="#{doc.url}") #{doc.name}
 
-          li(class=page === "about" ? "active" : undefined)
-            a(href="/about") About
+        li(class=root_page === "about" ? "active" : undefined)
+          a(href="/web/about") About

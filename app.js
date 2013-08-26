@@ -1,6 +1,7 @@
 var express = require('express');
 var jade = require('jade');
 
+
 var app = express();
 
 // Setup template engine
@@ -20,8 +21,8 @@ var render = function (template, req, res) {
                        {"name": "5.0.0", "commit": "305729e4f67c239802d38eb2446c3cee8fc5276a"},
                        {"name": "5.0.0-beta0", "commit": "7ffd65ae4dd6a4a6c06ebff910326c1bc35c8f01"}];
     params.stable = "5.0.2";
-    params.web_docs = [{name: "Quickstart", url: "quickstart"},
-                        {name: "User Guide", url: "user_guide"}];
+    params.web_docs = [{name: "Quickstart", url: "/web/docs/project/quickstart"},
+                        {name: "User Guide", url: "/web/docs/project/user_guide"}];
     params.pdf_docs = [{name: "Elements of MOM 5", filename: "MOM5_elements.pdf"},
                        {name: "MOM 4 Technical Guide", filename: "MOM4_guide.pdf"},
                        {name: "Test Case: Atlantic", filename: "testcase_atl_regional.pdf"},
@@ -30,10 +31,11 @@ var render = function (template, req, res) {
                        {name: "Test Case: Coupled Ocean", filename: "testcase_ocean_cpld.pdf"},
                        {name: "Test Case: Solo Ocean", filename: "testcase_ocean_solo.pdf"}
                        ];
-    params.other_docs = [{name: "Using Git", url: "git"},
-                         {name: "Using Git Annxes", url: "git-annex"}];
+    params.other_docs = [{name: "Using Git", url: "/web/docs/git"},
+                         {name: "Using Git Annxes", url: "/web/docs/git-annex"}];
     params.github = "mom";
     params.page = template;
+    params.root_page = req.route.path.split("/")[2];
     res.render(template, params);
 };
 
@@ -61,19 +63,39 @@ var docs = function (req, res) {
     render("docs", req, res);
 };
 
+var quickstart = function (req, res) {
+    render("quickstart", req, res);
+};
+
+var user_guide = function (req, res) {
+    render("user_guide", req, res);
+};
+
+var git = function (req, res) {
+    render("git", req, res);
+};
+
+var git_annex = function (req, res) {
+    render("git_annex", req, res);
+};
+
 // Setup routes;
 
-app.get("/", root);
-app.get("/tasks", tasks);
-app.get("/about", about);
-app.get("/CI", CI);
-app.get("/downloads", downloads);
-app.get("/docs", docs);
+app.get("/web", root);
+app.get("/web/tasks", tasks);
+app.get("/web/about", about);
+app.get("/web/CI", CI);
+app.get("/web/downloads", downloads);
+app.get("/web/docs/project/quickstart", quickstart);
+app.get("/web/docs/project/user_guide", user_guide);
+app.get("/web/docs/git", git);
+app.get("/web/docs/git-annex", git_annex);
+app.get("/web/docs", docs);
+
 
 // Static resource routes
 var pub = __dirname + '/public';
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/bootstrap'));
 
 // Run the server
 var port = process.env.PORT || 3001;
