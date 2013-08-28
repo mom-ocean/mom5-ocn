@@ -91,6 +91,7 @@ app.get("/web/docs/project/user_guide", user_guide);
 app.get("/web/docs/git", git);
 app.get("/web/docs/git-annex", git_annex);
 app.get("/web/docs", docs);
+app.get("/", function (req, res) { res.redirect("/web"); });
 
 
 // Static resource routes
