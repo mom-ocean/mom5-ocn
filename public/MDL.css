@@ -3,9 +3,12 @@
 body {
   background: url("./water.jpg");
   background-repeat:no-repeat;
-  background-attachment:fixed;
   background-attachment: fixed !important;
-  background-size: cover !important;
+  -webkit-background-size: cover; /* Safari and Chrome */
+  -moz-background-size: cover; /* Firefox */
+  -ms-background-size: cover; /* Internet Explorer */
+  -o-background-size: cover; /* Opera */
+  background-size: cover; /* CSS3 */
   display: compact;
 }
 
