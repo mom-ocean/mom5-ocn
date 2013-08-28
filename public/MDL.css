@@ -32,3 +32,12 @@ pre {
 .main-row {
     padding-top: 20px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Century Schoolbook", Georgia, Times, serif;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 46px;
+}

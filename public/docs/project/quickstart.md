@@ -1,5 +1,3 @@
-# MOM Quickstart Guide
-
 Brief instructions for running MOM5 experiments
    
 Author: Niki Zadeh (Niki.Zadeh@@noaa.gov)
