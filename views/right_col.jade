@@ -1,32 +1,24 @@
-.panel.panel-default.side-box
-    .panel-heading
-        h3.panel-title Online Documentation
-    .panel-body
-        p Get up and running in no time at all.
-        a.btn-primary.btn-small.btn(href="docs/project/quickstart")<i class="glyphicon glyphicon-font glyphicon-white"></i> Quickstart Guide
-.panel.panel-default.side-box
-    .panel-heading
-        h3.panel-title Open Development
-    .panel-body
-        p All #{project} code is available on Github.
-        iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=fork&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="75", height="20")
-        iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="72", height="20")    iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="95", height="20")
-        a.btn-primary.btn-small.btn(href="http://www.github.com/BreakawayLabs/#{github}")<i class="glyphicon glyphicon-arrow-right glyphicon-white"></i>  Download
-.panel.panel-default.side-box
-    .panel-heading
-        h3.panel-title Task Tracking
-    .panel-body
-        p Request a feature or report an issue.
-        a.btn-primary.btn-small.btn(href="http://mom-ocean.org/youtrack")<i class="glyphicon glyphicon-wrench glyphicon-white"></i> Task Tracker
-.panel.panel-default.side-box
-    .panel-heading
-        h3.panel-title Continuous Integration
-    .panel-body
-        p Check the status of tests being run by the continuous integration system.
-        a.btn-primary.btn-mini.btn(href="http://mom-ocean.org/teamcity")<i class="glyphicon glyphicon-cog glyphicon-white"></i> Continuous Integration
-.panel.panel-default.side-box
-    .panel-heading
-        h3.panel-title Open Community
-    .panel-body
-        p Join in with the #{project} community discussion.
-        a.btn-primary.btn-small.btn(href="https://groups.google.com/forum/#!forum/mom-users")<i class="glyphicon glyphicon-comment glyphicon-white"></i> #{project} Mailing List
+mixin side_box(title, btn_url, glyph, btn_txt)
+    .panel.panel-default.side-box
+        .panel-heading
+            h3.panel-title #{title}
+        .panel-body
+            block
+            a.btn-primary.btn-small.btn(href="#{btn_url}")<i class="glyphicon glyphicon-#{glyph} glyphicon-white"></i> #{btn_txt}
+
++side_box("Online Documentation", "docs/project/quickstart", "font", "Quickstart Guide")
+    p Get up and running in no time at all.
+
++side_box("Open Development", "http://www.github.com/BreakawayLabs/#{github}", "arrow-right", "Download")
+    p All #{project} code is available on Github.
+    iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=fork&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="75", height="20")
+    iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="72", height="20")    iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="95", height="20")
+
++side_box("Task Tracking", "http://mom-ocean.org/youtrack", "wrench", "Task Tracker")
+    p Request a feature or report an issue.
+
++side_box("Continuous Integration", "http://mom-ocean.org/teamcity", "cog", "Continuous Integration")
+    p Check the status of tests being run by the continuous integration system.
+
++side_box("Open Community", "https://groups.google.com/forum/#!forum/mom-users", "comment", "#{project} Mailing List")
+    p Join in with the #{project} community discussion.
