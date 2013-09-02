@@ -5,7 +5,8 @@ mixin news(title, author, email, date)
     .panel.panel-default
         .panel-heading
             h1.panel-title.post-title= title
-            p.post-date <a href="mailto:#{email}">#{author}</a> - #{date}
+            if author !== "" && date !== ""
+                p.post-date <a href="mailto:#{email}">#{author}</a> - #{date}
         .panel-body
             block
 
