@@ -1,18 +1,20 @@
 extends layout
 
-block content 
-    .panel.panel-default
-        .panel-heading
-            h1.panel-title.post-title COBALT - A MOM based ecosystem model
-            p.post-date <a href="mailto:stephen.griffies@noaa.gov">Stephen Griffies</a> - September 1, 2013
-        .panel-body
-            p NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href="http://www.sciencedirect.com/science/article/pii/S0079661113001079">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!
 
+mixin news(title, author, email, date)
     .panel.panel-default
         .panel-heading
-            h1.panel-title.post-title Model Development Lab Upgrade
-            p.post-date <a href="mailto:timl@breakawaylabs.com.au">Tim Leslie</a> - August 28, 2013
+            h1.panel-title.post-title= title
+            p.post-date <a href="mailto:#{email}">#{author}</a> - #{date}
         .panel-body
-            p We are pleased to announce that the MOM 5 Model Development Lab (this very website) is being relaunched today. Featuring a a cleaner interface and a more powerful underlying framework, the new system will allow the MOM community to continue to grow and thrive.
-            p One exciting development is a revamp of the front page which will now contain regular news updates. If you have recently published any kind of research using MOM then we'd love to hear from you. Leave a message on <a href="https://groups.google.com/forum/#!forum/mom-users">mailing list</a> and we'll arrange to have your reserach feature front and center on this page.
-            p Over the coming months we anticipate a number of announcements, including the release of MOM 5.1. As always, we welcome contributions from all users in the forms of <a href="http://www.github.com/BreakawayLabs/mom">code contributions</a>, <a href="http://mom-ocean.org/youtrack">bug reports</a> or news articles.
+            block
+
+
+block content 
+    +news("COBALT - A MOM based ecosystem model", "Stephen Griffies", "stephen.griffies@noaa.gov", "September 1, 2013")
+        p NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href="http://www.sciencedirect.com/science/article/pii/S0079661113001079">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!
+
+    +news("Model Development Lab Upgrade", "Tim Leslie", "timl@breakawaylabs.com.au", "August 28, 2013")
+        p We are pleased to announce that the MOM 5 Model Development Lab (this very website) is being relaunched today. Featuring a a cleaner interface and a more powerful underlying framework, the new system will allow the MOM community to continue to grow and thrive.
+        p One exciting development is a revamp of the front page which will now contain regular news updates. If you have recently published any kind of research using MOM then we'd love to hear from you. Leave a message on <a href="https://groups.google.com/forum/#!forum/mom-users">mailing list</a> and we'll arrange to have your reserach feature front and center on this page.
+        p Over the coming months we anticipate a number of announcements, including the release of MOM 5.1. As always, we welcome contributions from all users in the forms of <a href="http://www.github.com/BreakawayLabs/mom">code contributions</a>, <a href="http://mom-ocean.org/youtrack">bug reports</a> or news articles.
