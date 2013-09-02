@@ -11,6 +11,12 @@ mixin news(title, author, email, date)
 
 
 block content 
+
+    +news("The Modular Ocean Model (MOM)", "", "", "")
+        p !{project_desc}
+        h4 The Model Development Lab
+        p As a community driven open source research project, #{project} uses online software development tools to ensure all development is as open and transparent as possible. The <a href="web/about">Model Development Lab</a> is a collection of tools provided by <a href="http://www.breakawaylabs.com.au">Breakaway Labs</a> to facilitate fast and efficient development.
+
     +news("COBALT - A MOM based ecosystem model", "Stephen Griffies", "stephen.griffies@noaa.gov", "September 1, 2013")
         p NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href="http://www.sciencedirect.com/science/article/pii/S0079661113001079">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!
 
