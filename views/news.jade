@@ -9,11 +9,10 @@ mixin news(title, author, email, date)
                 p.post-date <a href="mailto:#{email}">#{author}</a> - #{date}
         .panel-body
             block
-
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="#{title}" data-url="#{twitter_url}">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 block content 
 
     +news(news_item.title, news_item.author, news_item.email, news_item.date)
         !{news_item.block}
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="#{news_item.title}">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

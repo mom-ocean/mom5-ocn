@@ -74,6 +74,7 @@ var render_news = function(req, res) {
         params.news_item = NEWS_ITEMS[i];
         params.page = template;
         params.root_page = req.route.path.split("/")[2];
+        params.twitter_url = "http://www.mom-ocean.org" + req.route.path;
         res.render(template, params);
       }
     }
