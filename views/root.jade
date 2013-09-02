@@ -1,10 +1,11 @@
 extends layout
 
 
-mixin news(title, author, email, date)
+mixin news(title, author, email, date, link)
     .panel.panel-default
         .panel-heading
-            h1.panel-title.post-title= title
+            h1.panel-title.post-title
+                a(href="#{link}") #{title}
             if author !== "" && date !== ""
                 p.post-date <a href="mailto:#{email}">#{author}</a> - #{date}
         .panel-body
@@ -13,15 +14,11 @@ mixin news(title, author, email, date)
 
 block content 
 
-    +news("The Modular Ocean Model (MOM)", "", "", "")
+    +news("The Modular Ocean Model (MOM)", "", "", "", "/")
         p !{project_desc}
         h4 The Model Development Lab
         p As a community driven open source research project, #{project} uses online software development tools to ensure all development is as open and transparent as possible. The <a href="web/about">Model Development Lab</a> is a collection of tools provided by <a href="http://www.breakawaylabs.com.au">Breakaway Labs</a> to facilitate fast and efficient development.
 
-    +news("COBALT - A MOM based ecosystem model", "Stephen Griffies", "stephen.griffies@noaa.gov", "September 1, 2013")
-        p NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href="http://www.sciencedirect.com/science/article/pii/S0079661113001079">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!
-
-    +news("Model Development Lab Upgrade", "Tim Leslie", "timl@breakawaylabs.com.au", "August 28, 2013")
-        p We are pleased to announce that the MOM 5 Model Development Lab (this very website) is being relaunched today. Featuring a a cleaner interface and a more powerful underlying framework, the new system will allow the MOM community to continue to grow and thrive.
-        p One exciting development is a revamp of the front page which will now contain regular news updates. If you have recently published any kind of research using MOM then we'd love to hear from you. Leave a message on <a href="https://groups.google.com/forum/#!forum/mom-users">mailing list</a> and we'll arrange to have your reserach feature front and center on this page.
-        p Over the coming months we anticipate a number of announcements, including the release of MOM 5.1. As always, we welcome contributions from all users in the forms of <a href="http://www.github.com/BreakawayLabs/mom">code contributions</a>, <a href="http://mom-ocean.org/youtrack">bug reports</a> or news articles.
+    for news_item in news_items
+        +news(news_item.title, news_item.author, news_item.email, news_item.date, news_item.link)
+            !{news_item.block}

@@ -8,8 +8,23 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-// Controllers
-var render = function (template, req, res) {
+var NEWS_ITEMS = [{"title": "COBALT - A MOM based ecosystem model",
+                   "author": "Stephen Griffies",
+                   "email": "stephen.griffies@noaa.gov",
+                   "date": "September 1, 2013",
+                   "block": "<p>NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href=\"http://www.sciencedirect.com/science/article/pii/S0079661113001079\">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!</p>",
+                   "link": "/web/news/cobalt-a-mom-based-ecosystem-model"
+                   },
+                  {"title": "Model Development Lab Upgrade",
+                   "author": "Tim Leslie",
+                   "email": "timl@breakawaylabs.com.au",
+                   "date": "August 28, 2013",
+                   "block": "<p>We are pleased to announce that the MOM 5 Model Development Lab (this very website) is being relaunched today. Featuring a a cleaner interface and a more powerful underlying framework, the new system will allow the MOM community to continue to grow and thrive.</p>\n<p>One exciting development is a revamp of the front page which will now contain regular news updates. If you have recently published any kind of research using MOM then we'd love to hear from you. Leave a message on <a href=\"https://groups.google.com/forum/#!forum/mom-users\">mailing list</a> and we'll arrange to have your reserach feature front and center on this page.</p>\nOver the coming months we anticipate a number of announcements, including the release of MOM 5.1. As always, we welcome contributions from all users in the forms of <a href=\"http://www.github.com/BreakawayLabs/mom\">code contributions</a>, <a href=\"http://mom-ocean.org/youtrack\">bug reports</a> or news articles.</p>",
+                   "link": "/web/news/model-development-lab-upgrade"
+                   }
+                  ];
+
+var base_params = function () {
     var params = {};
     params.project = "MOM";
     params.project_title = "Modular Ocean Model (MOM)";
@@ -34,9 +49,34 @@ var render = function (template, req, res) {
     params.other_docs = [{name: "Using Git", url: "/web/docs/git"},
                          {name: "Using Git Annxes", url: "/web/docs/git-annex"}];
     params.github = "mom";
+    params.news_items = NEWS_ITEMS;
+    return params;
+};
+
+
+// Controllers
+var render = function (template, req, res) {
+    var params = base_params();
+
     params.page = template;
     params.root_page = req.route.path.split("/")[2];
+
     res.render(template, params);
+};
+
+var render_news = function(req, res) {
+    var params = base_params();
+    var template = "news";
+
+    var news_item, i;
+    for (i=0; i < NEWS_ITEMS.length; i++) {
+      if (NEWS_ITEMS[i].link === req.route.path) {
+        params.news_item = NEWS_ITEMS[i];
+        params.page = template;
+        params.root_page = req.route.path.split("/")[2];
+        res.render(template, params);
+      }
+    }
 };
 
 var root = function (req, res) {
@@ -79,6 +119,7 @@ var git_annex = function (req, res) {
     render("git_annex", req, res);
 };
 
+
 // Setup routes;
 
 app.get("/web", root);
@@ -91,6 +132,10 @@ app.get("/web/docs/project/user_guide", user_guide);
 app.get("/web/docs/git", git);
 app.get("/web/docs/git-annex", git_annex);
 app.get("/web/docs", docs);
+
+app.get("/web/news/cobalt-a-mom-based-ecosystem-model", render_news);
+app.get("/web/news/model-development-lab-upgrade", render_news);
+
 app.get("/", function (req, res) { res.redirect("/web"); });
 
 

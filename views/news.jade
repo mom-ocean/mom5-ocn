@@ -1,0 +1,17 @@
+extends layout
+
+
+mixin news(title, author, email, date)
+    .panel.panel-default
+        .panel-heading
+            h1.panel-title.post-title= title
+            if author !== "" && date !== ""
+                p.post-date <a href="mailto:#{email}">#{author}</a> - #{date}
+        .panel-body
+            block
+
+
+block content 
+
+    +news(news_item.title, news_item.author, news_item.email, news_item.date)
+        !{news_item.block}
