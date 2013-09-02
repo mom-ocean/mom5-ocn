@@ -1,39 +1,18 @@
 extends layout
 
 block content 
-    .main-box.panel.panel-default
+    .panel.panel-default
         .panel-heading
-            .page-header
-                h1.text-center The #{project_title}
-
+            h1.panel-title.post-title COBALT - A MOM based ecosystem model
+            p.post-date <a href="mailto:stephen.griffies@noaa.gov">Stephen Griffies</a> - September 1, 2013
         .panel-body
-            p !{project_desc}
+            p NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href="http://www.sciencedirect.com/science/article/pii/S0079661113001079">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!
 
-            h2 The Model Development Lab
-
-            p As a community driven open source research project, #{project} uses online software development tools to ensure all development is as open and transparent as possible. The <a href="web/about">Model Development Lab</a> is a collection of tools provided by <a href="http://www.breakawaylabs.com.au">Breakaway Labs</a> to facilitate fast and efficient development.
-
-            h3 Quickstart
-
-            p The current stable version of #{project} is #{stable}. The <a href="web/docs/project/quickstart">quickstart guide</a> will get you up and running today.
-
-            h3 Download #{project}
-
-            p Stable and development versions of #{project} are available for <a href="web/downloads">download</a> via git or as tarballs.
-
-            h3 Request Features and Report Bugs
-
-            p If you'd like to see a new feature, or have found a problem, please report it using the <a href="web/tasks">task tracking</a> system.
-
-            h3 Check Current Development Status
-
-            p We never stop testing #{project}. Keep an eye on the current test status with the <a href="web/CI">continuous integration</a> system.
-
-            h3 Read The Documentation
-
-            p We want to make it easy for you to work with #{project}. Constantly evolving technical and scientific <a href="web/docs">documentation</a> in available for your reading pleasure.
-
-            h3 Get in Contact
-
-            p If you want to get in contact with the other users and developers then please check in with the #{project} <a href="https://groups.google.com/forum/#!forum/{data.google_groups}">mailing list</a>.
-
+    .panel.panel-default
+        .panel-heading
+            h1.panel-title.post-title Model Development Lab Upgrade
+            p.post-date <a href="mailto:timl@breakawaylabs.com.au">Tim Leslie</a> - August 28, 2013
+        .panel-body
+            p We are pleased to announce that the MOM 5 Model Development Lab (this very website) is being relaunched today. Featuring a a cleaner interface and a more powerful underlying framework, the new system will allow the MOM community to continue to grow and thrive.
+            p One exciting development is a revamp of the front page which will now contain regular news updates. If you have recently published any kind of research using MOM then we'd love to hear from you. Leave a message on <a href="https://groups.google.com/forum/#!forum/mom-users">mailing list</a> and we'll arrange to have your reserach feature front and center on this page.
+            p Over the coming months we anticipate a number of announcements, including the release of MOM 5.1. As always, we welcome contributions from all users in the forms of <a href="http://www.github.com/BreakawayLabs/mom">code contributions</a>, <a href="http://mom-ocean.org/youtrack">bug reports</a> or news articles.
