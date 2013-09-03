@@ -9,7 +9,7 @@ mixin side_box(title, btn_url, glyph, btn_txt)
 +side_box("Online Documentation", "docs/project/quickstart", "font", "Quickstart Guide")
     p Get up and running in no time at all.
 
-+side_box("Open Development", "http://www.github.com/BreakawayLabs/#{github}", "arrow-right", "Download")
++side_box("Open Development", "http://www.github.com/BreakawayLabs/" + github, "arrow-right", "Download")
     p All #{project} code is available on Github.
     iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=fork&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="83", height="20")
     iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="72", height="20")    iframe(src="http://ghbtns.com/github-btn.html?user=BreakawayLabs&repo=#{github}&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="95", height="20")
@@ -20,5 +20,5 @@ mixin side_box(title, btn_url, glyph, btn_txt)
 +side_box("Continuous Integration", "http://mom-ocean.org/teamcity", "cog", "Continuous Integration")
     p Check the status of tests being run by the continuous integration system.
 
-+side_box("Open Community", "https://groups.google.com/forum/#!forum/mom-users", "comment", "MOM Mailing List")
++side_box("Open Community", "https://groups.google.com/forum/#!forum/mom-users", "comment", project + " Mailing List")
     p Join in with the #{project} community discussion.
