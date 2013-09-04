@@ -8,6 +8,10 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
+var all_namelists = require('./all_namelists.json');
+//console.log(JSON.parse(namelists));
+//console.log(namelists);
+
 var NEWS_ITEMS = [{"title": "COBALT - A MOM based ecosystem model",
                    "author": "Stephen Griffies",
                    "email": "stephen.griffies@noaa.gov",
@@ -50,6 +54,7 @@ var base_params = function () {
                          {name: "Using Git Annxes", url: "/web/docs/git-annex"}];
     params.github = "mom";
     params.news_items = NEWS_ITEMS;
+    params.namelists = all_namelists;
     return params;
 };
 
@@ -92,6 +97,10 @@ var about = function (req, res) {
     render("about", req, res);
 };
 
+var namelists = function (req, res) {
+    render("namelists", req, res);
+}
+
 var CI = function (req, res) {
     render("CI", req, res);
 };
@@ -128,6 +137,7 @@ app.get("/web/tasks", tasks);
 app.get("/web/about", about);
 app.get("/web/CI", CI);
 app.get("/web/downloads", downloads);
+app.get("/web/namelists", namelists);
 app.get("/web/docs/project/quickstart", quickstart);
 app.get("/web/docs/project/user_guide", user_guide);
 app.get("/web/docs/git", git);
