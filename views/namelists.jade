@@ -2,38 +2,39 @@ extends layout
 
 block content 
     .main-box.panel.panel-default
-        .panel-group(id="accordian")
-            .panel-heading
-                h2 Namelists <sup>&beta;</sup>
-                p The MOM code uses <a href="http://publib.boulder.ibm.com/infocenter/lnxpcomp/v8v101/index.jsp?topic=%2Fcom.ibm.xlf101l.doc%2Fxlflr%2Fnamelistio.htm">fortran namelists</a> as a configuration mechanism.
-                p This page provides documentation on the available namelist values for each module.
-                p The contents of this page are derived directly from the model source code. If you find an error, or would like to make any improvements then you can either <a href="http://mom-ocean.org/youtrack">lodge a bug report</a> or make the changes directly via <a href="http://www.github.com/BreakawayLabs/mom">github</a>.
-                .panel.panel-warning
-                    .panel-heading
-                        h5 Warning
-                    .panel-body
-                        p This page is currently in beta. The contents and formatting may change without notice. All namelist items used should be checked against the source code of your deployed model before being used.
-                for namelist in namelists
-                    if (namelist.items.length > 0)
-                        .panel.panel-default
-                            .panel-heading
-                                a(class="accordion-toggle", data-toggle="collapse", data-parent="#accordion", href="##{namelist.namelist}")
-                                    p <strong>Filename</strong>: <code>#{namelist.filename}</code>
-                                    p <strong>Namelist</strong>: <code>#{namelist.namelist}</code>
-                            .panel-collapse.collapse(id="#{namelist.namelist}")
-                                .panel-body
-                                    table.table-hover
+        //- .panel-group(id="accordian")
+        .panel-heading
+            h2 Namelists <sup>&beta;</sup>
+            p The MOM code uses <a href="http://publib.boulder.ibm.com/infocenter/lnxpcomp/v8v101/index.jsp?topic=%2Fcom.ibm.xlf101l.doc%2Fxlflr%2Fnamelistio.htm">fortran namelists</a> as a configuration mechanism.
+            p This page provides documentation on the available namelist values for each module.
+            p The contents of this page are derived directly from the model source code. If you find an error, or would like to make any improvements then you can either <a href="http://mom-ocean.org/youtrack">lodge a bug report</a> or make the changes directly via <a href="http://www.github.com/BreakawayLabs/mom">github</a>.
+            .panel.panel-warning
+                .panel-heading
+                    h5 Warning
+                .panel-body
+                    p This page is currently in beta. The contents and formatting may change without notice. All namelist items used should be checked against the source code of your deployed model before being used.
+            for namelist in namelists
+                if (namelist.items.length > 0)
+                    .panel.panel-default
+                        .panel-heading
+                            button.btn.btn-info(type="button", data-toggle="collapse", data-target="##{namelist.namelist}", style="float:right;") <span class="glyphicon glyphicon-arrow-down"></span>
+                            p <strong>Filename</strong>: <a href="https://github.com/BreakawayLabs/mom/tree/master/#{namelist.filename}"><code>#{namelist.filename}</code></a>
+                            p <strong>Namelist</strong>: <code>#{namelist.namelist}</code>
+
+                        .panel-collapse.collapse(id="#{namelist.namelist}")
+                            .panel-body
+                                table.table-hover
+                                    tr
+                                        th Name
+                                        th Type
+                                        th Units
+                                        th Default
+                                        th Description
+                                    for item in namelist.items
                                         tr
-                                            th Name
-                                            th Type
-                                            th Units
-                                            th Default
-                                            th Description
-                                        for item in namelist.items
-                                            tr
-                                                td
-                                                    code #{item.name}
-                                                td #{item.type_}
-                                                td #{item.units}
-                                                td #{item.default}
-                                                td #{item.description}
+                                            td
+                                                code #{item.name}
+                                            td #{item.type_}
+                                            td #{item.units}
+                                            td #{item.default}
+                                            td #{item.description}
