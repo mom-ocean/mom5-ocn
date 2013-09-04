@@ -25,15 +25,27 @@ block content
                                 table.table.table-hover
                                     tr
                                         th Name
-                                        th Type
-                                        th Units
-                                        th Default
+                                        th(style="padding:0px;")
+                                            table
+                                                tr
+                                                    th Type
+                                                tr
+                                                    th Default
+                                                tr
+                                                    th Units
                                         th Description
+
                                     for item in namelist.items
                                         tr
-                                            td(style="padding:5px;")
+                                            td
                                                 code #{item.name}
-                                            td(style="padding:5px;") #{item.type_}
-                                            td(style="padding:5px;") #{item.units}
-                                            td(style="padding:5px;") #{item.default}
-                                            td(style="padding:5px;") #{item.description}
+                                            td(style="padding:0px;")
+                                                table
+                                                    tr
+                                                        td #{item.type_}
+                                                    tr
+                                                        td #{item.default}
+                                                    tr
+                                                        td #{item.units}
+                                            td #{item.description}
+
