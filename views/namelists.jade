@@ -20,10 +20,9 @@ block content
                             button.btn.btn-info(type="button", data-toggle="collapse", data-target="##{namelist.namelist}", style="float:right;") <span class="glyphicon glyphicon-arrow-down"></span>
                             p <strong>Filename</strong>: <a href="https://github.com/BreakawayLabs/mom/tree/master/#{namelist.filename}"><code>#{namelist.filename}</code></a>
                             p <strong>Namelist</strong>: <code>#{namelist.namelist}</code>
-
                         .panel-collapse.collapse(id="#{namelist.namelist}")
                             .panel-body
-                                table.table-hover
+                                table.table.table-hover
                                     tr
                                         th Name
                                         th Type
@@ -32,9 +31,9 @@ block content
                                         th Description
                                     for item in namelist.items
                                         tr
-                                            td
+                                            td(style="padding:5px;")
                                                 code #{item.name}
-                                            td #{item.type_}
-                                            td #{item.units}
-                                            td #{item.default}
-                                            td #{item.description}
+                                            td(style="padding:5px;") #{item.type_}
+                                            td(style="padding:5px;") #{item.units}
+                                            td(style="padding:5px;") #{item.default}
+                                            td(style="padding:5px;") #{item.description}
