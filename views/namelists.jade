@@ -14,39 +14,41 @@ block content
                     h5 Warning
                 .panel-body
                     p This page is currently in beta. The contents and formatting may change without notice. All namelist items used should be checked against the source code of your deployed model before being used.
-            for namelist in namelists
-                if (namelist.items.length > 0)
-                    .panel.panel-default
-                        .panel-heading
-                            button.btn.btn-info(type="button", data-toggle="collapse", data-target="##{namelist.namelist}", style="float:right;") <span class="glyphicon glyphicon-arrow-down"></span>
-                            p <strong>Filename</strong>: <a href="https://github.com/BreakawayLabs/mom/tree/master/#{namelist.filename}"><code>#{namelist.filename}</code></a>
-                            p <strong>Namelist</strong>: <code>#{namelist.namelist}</code>
-                        .panel-collapse.collapse(id="#{namelist.namelist}")
-                            .panel-body
-                                table.table.table-hover
-                                    tr
-                                        th Name
-                                        th(style="padding:0px;")
-                                            table
-                                                tr
-                                                    th Type
-                                                tr
-                                                    th Default
-                                                tr
-                                                    th Units
-                                        th Description
-
-                                    for item in namelist.items
+            for dir in namelists
+                h3 #{dir.directory}
+                for namelist in dir.namelists
+                    if (namelist.items.length > 0)
+                        .panel.panel-default
+                            .panel-heading
+                                button.btn.btn-info(type="button", data-toggle="collapse", data-target="##{namelist.namelist}", style="float:right;") <span class="glyphicon glyphicon-arrow-down"></span>
+                                p <strong>Filename</strong>: <a href="https://github.com/BreakawayLabs/mom/tree/master/#{namelist.filename}"><code>#{namelist.filename}</code></a>
+                                p <strong>Namelist</strong>: <code>#{namelist.namelist}</code>
+                            .panel-collapse.collapse(id="#{namelist.namelist}")
+                                .panel-body
+                                    table.table.table-hover
                                         tr
-                                            td
-                                                code #{item.name}
-                                            td(style="padding:0px;")
+                                            th Name
+                                            th(style="padding:0px;")
                                                 table
                                                     tr
-                                                        td #{item.type_}
+                                                        th Type
                                                     tr
-                                                        td #{item.default}
+                                                        th Default
                                                     tr
-                                                        td #{item.units}
-                                            td #{item.description}
+                                                        th Units
+                                            th Description
+
+                                        for item in namelist.items
+                                            tr
+                                                td
+                                                    code #{item.name}
+                                                td(style="padding:0px;")
+                                                    table
+                                                        tr
+                                                            td #{item.type_}
+                                                        tr
+                                                            td #{item.default}
+                                                        tr
+                                                            td #{item.units}
+                                                td #{item.description}
 
