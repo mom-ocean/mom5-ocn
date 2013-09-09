@@ -1,12 +1,20 @@
 var express = require('express');
 var jade = require('jade');
-
+var marked = require("marked");
 
 var app = express();
 
 // Setup template engine
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+
+var md = function(text) {
+    if (text !== null) {
+        return marked.parser(marked.lexer(text));
+    } else {
+        return "";
+    }
+};
 
 var all_namelists = require('./all_namelists.json');
 //console.log(JSON.parse(namelists));
@@ -55,6 +63,7 @@ var base_params = function () {
     params.github = "mom";
     params.news_items = NEWS_ITEMS;
     params.namelists = all_namelists;
+    params.md = md;
     return params;
 };
 

@@ -45,10 +45,12 @@ block content
                                                 td(style="padding:0px;")
                                                     table
                                                         tr
-                                                            td #{item.type_}
+                                                            td
+                                                                code #{item.type_}
                                                         tr
-                                                            td #{item.default}
+                                                            td
+                                                                code #{item.default}
                                                         tr
                                                             td #{item.units}
-                                                td #{item.description}
+                                                td !{md(item.description)}
 
