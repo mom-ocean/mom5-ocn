@@ -64,6 +64,7 @@ var base_params = function () {
     params.news_items = NEWS_ITEMS;
     params.namelists = all_namelists;
     params.md = md;
+    params.title = "Model Development Lab"
     return params;
 };
 
@@ -86,6 +87,7 @@ var render_news = function(req, res) {
     for (i=0; i < NEWS_ITEMS.length; i++) {
       if (NEWS_ITEMS[i].link === req.route.path) {
         params.news_item = NEWS_ITEMS[i];
+        params.title = NEWS_ITEMS[i].title;
         params.page = template;
         params.root_page = req.route.path.split("/")[2];
         params.twitter_url = "http://www.mom-ocean.org" + req.route.path;
