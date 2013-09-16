@@ -24,7 +24,7 @@ var NEWS_ITEMS = [{"title": "COBALT - A MOM based ecosystem model",
                    "author": "Stephen Griffies",
                    "email": "stephen.griffies@noaa.gov",
                    "date": "September 1, 2013",
-                   "block": "<p>NOAA/GFDL scientists (Stock, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href=\"http://www.sciencedirect.com/science/article/pii/S0079661113001079\">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!</p>",
+                   "block": "<p>NOAA/GFDL scientists (<a href=\"http://www.gfdl.noaa.gov/charles-stock-homepage\">Stock</a>, Dunne, and John) have developed a new ecosystem model that can be coupled to MOM5 as well as other ocean circulation models.  The ecosystem model, known as COBALT, is documented in <a href=\"http://www.sciencedirect.com/science/article/pii/S0079661113001079\">this paper</a>. Plans are underway to release COBALT in November 2013 as part of the public MOM5 code.  Please stay tuned!</p>",
                    "link": "/web/news/cobalt-a-mom-based-ecosystem-model"
                    },
                   {"title": "Model Development Lab Upgrade",
