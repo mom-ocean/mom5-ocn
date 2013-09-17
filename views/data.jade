@@ -1,0 +1,23 @@
+extends layout
+
+block content 
+    .main-box.panel.panel-default
+        //- .panel-group(id="accordian")
+        .panel-heading
+            h2 Data <sup>&beta;</sup>
+        .panel-body
+            p The test case data sets for MOM are managed with <a href="/web/docs/git-annex">git annex</a>. If you do not have access to git-annex, or would prefer a direct download, you can access all the data files from this page.
+            .panel.panel-warning
+                .panel-heading
+                    h5 Warning
+                .panel-body
+                    p This page is currently in beta.
+            for directory in data_paths
+                .panel.panel-default
+                    .panel-heading
+                        button.btn.btn-info(type="button", data-toggle="collapse", data-target="##{directory.root2}", style="float:right;") <span class="glyphicon glyphicon-arrow-down"></span>
+                        h3 #{directory.root}
+                    .panel-collapse.collapse(id="#{directory.root2}")
+                        .panel-body
+                            for data_path in directory.dir_links
+                                p <a href="https://s3.amazonaws.com/breakawaylabs-mom-data/#{data_path.s3_filename}" download="#{data_path.filename}">#{data_path.data_path}</a> #{data_path.size}

@@ -17,8 +17,7 @@ var md = function(text) {
 };
 
 var all_namelists = require('./all_namelists.json');
-//console.log(JSON.parse(namelists));
-//console.log(namelists);
+var data_paths = require("./data_paths.json");
 
 var NEWS_ITEMS = [{"title": "COBALT - A MOM based ecosystem model",
                    "author": "Stephen Griffies",
@@ -63,6 +62,7 @@ var base_params = function () {
     params.github = "mom";
     params.news_items = NEWS_ITEMS;
     params.namelists = all_namelists;
+    params.data_paths = data_paths;
     params.md = md;
     params.title = "Model Development Lab"
     return params;
@@ -112,6 +112,10 @@ var namelists = function (req, res) {
     render("namelists", req, res);
 }
 
+var data = function (req, res) {
+    render("data", req, res);
+}
+
 var CI = function (req, res) {
     render("CI", req, res);
 };
@@ -149,6 +153,7 @@ app.get("/web/about", about);
 app.get("/web/CI", CI);
 app.get("/web/downloads", downloads);
 app.get("/web/namelists", namelists);
+app.get("/web/data", data);
 app.get("/web/docs/project/quickstart", quickstart);
 app.get("/web/docs/project/user_guide", user_guide);
 app.get("/web/docs/git", git);
