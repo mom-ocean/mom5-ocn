@@ -49,7 +49,19 @@ block content
                                                                 code #{item.type_}
                                                         tr
                                                             td
-                                                                code #{item.default}
+                                                                if (item.type_ === "logical")
+                                                                    if (item.default === ".true.")
+                                                                        <input type="checkbox" class="form-control" value="" checked>
+                                                                    else
+                                                                        <input type="checkbox" class="form-control" value="">
+                                                                else if (item.type_ === "integer")
+                                                                    <input type="number" class="form-control" name="points" step="1" value="#{parseInt(item.default)}">
+                                                                else if (item.type_ === "real" || item.type_ === "REALTYPE")
+                                                                    <input type="number" class="form-control" name="points" value="#{parseFloat(item.default)}">
+                                                                else if (item.type_.slice(0, 9) === "character" && item.default !== null)
+                                                                    <input type="text" class="form-control" value="#{item.default.slice(1, item.default.length-1)}" maxLenght="#{item.type_.slice(14, -1)}">
+                                                                else
+                                                                    code #{item.default}
                                                         tr
                                                             td #{item.units}
                                                 td !{md(item.description)}
