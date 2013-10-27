@@ -1,6 +1,7 @@
 var express = require('express');
 var jade = require('jade');
 var marked = require("marked");
+require("newrelic");
 
 var app = express();
 
