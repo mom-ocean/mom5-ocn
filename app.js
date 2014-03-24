@@ -20,7 +20,12 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "New Website Features",
+var NEWS_ITEMS = [{"title": "MOM 5.1.0 Released",
+                   "author": "Stephen Griffies",
+                   "email": "stephen.griffies@noaa.gov",
+                   "date": "March 25, 2014",
+                   "block": "<p>MOM developers are pleased to announce the release of MOM 5.1.0.  This version is very close to MOM 5.0.2, but with infrastructure updates made to support more computer platforms; new and modified diagnostic capabilities; bug fixes as reported through the MOM community; and a new ecosystem model known as COBALT.  As a general rule for updating code, please test the new code by comparing to your earlier results.</p><p>Happy modeling, Stephen Griffies for the MOM development team.</p>"
+                  {"title": "New Website Features",
                    "author": "Tim Leslie",
                    "email": "timl@breakawaylabs.com.au",
                    "date": "September 18, 2013",
@@ -48,7 +53,8 @@ var base_params = function () {
     params.project_title = "Modular Ocean Model (MOM)";
     params.project_desc = "MOM is a numerical ocean model based on the hydrostatic primitive equations. MOM development is led by scientists at <a href=\"http://www.gfdl.noaa.gov/ocean-model\">NOAA/GFDL</a> in collaboration with scientists worldwide. Version 5 of MOM (MOM5) is an open source project released under the <a href=\"https://github.com/BreakawayLabs/mom/blob/master/LICENSE\">GPL license</a>.";
     params.project_about = "The Modular Ocean Model (MOM) is a hydrostatic generalized level coordinate numerical ocean code with mass conserving non-Boussinesq or volume conserving Boussinesq kinematics. The model equations are discretized with generalized horizontal coordinates on the sphere using either an Arakawa B-grid or C-grid. MOM has a broad suite of physical parameterizations, diagnostic features, test cases, and documentation. It has been utilized for research and operations from the coasts to the globe. MOM is institutionally sanctioned by NOAA’s Geophysical Fluid Dynamics Laboratory (GFDL), where development is centered. Additional development and use occurs through hundreds of international scientists and engineers comprising the MOM community. MOM is free software distributed under GPLv2 and it is part of an open source community.";
-    params.releases = [{"name": "5.0.2", "commit": "8e524daedf27c1aaa35b4069efb38abc7575b4b5"},
+    params.releases = [{"name": "5.1.0", "commit": "f406b4c5b4bbece3b0ae7f376a4ba90ea68ffb1e"},
+                       {"name": "5.0.2", "commit": "8e524daedf27c1aaa35b4069efb38abc7575b4b5"},
                        {"name": "5.0.1", "commit": "2534bdc3b4bce6d08424174abda7b1ab6be0c29d"},
                        {"name": "5.0.1-beta0", "commit": "09cae4e1bd838efcb862d45bfc61ff074f849f9b"},
                        {"name": "5.0.0", "commit": "305729e4f67c239802d38eb2446c3cee8fc5276a"},
