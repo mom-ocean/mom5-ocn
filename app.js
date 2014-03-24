@@ -20,12 +20,12 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "MOM Release",
+var NEWS_ITEMS = [{"title": "MOM 5.1.0 Released",
                    "author": "Stephen Griffies",
                    "email": "stephen.griffies@noaa.gov",
                    "date": "March 25, 2014",
                    "block": "<p>MOM developers are pleased to announce the release of MOM 5.1.0. This version is very close to MOM 5.0.2, but with infrastructure updates to support more platforms; new and improved diagnostic capabilities; many bug fixes as reported through the MOM community; and a new ecosystem model known as COBALT.</p><p>As a general rule for updating code, please test the new code by comparing to your earlier results.</p><p>Happy modeling, Stephen Griffies for the MOM development team.</p>", 
-                   "link":  "/web/news/mom-release"},
+                   "link":  "/web/news/mom-5.1.0-released"},
                   {"title": "New Website Features",
                    "author": "Tim Leslie",
                    "email": "timl@breakawaylabs.com.au",
@@ -177,6 +177,7 @@ app.get("/web/docs", docs);
 app.get("/web/news/cobalt-a-mom-based-ecosystem-model", render_news);
 app.get("/web/news/model-development-lab-upgrade", render_news);
 app.get("/web/news/new-website-features", render_news);
+app.get("/web/news/mom-5.1.0-released", render_news);
 
 app.get("/", function (req, res) { res.redirect("/web"); });
 
