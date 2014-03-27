@@ -60,7 +60,7 @@ var base_params = function () {
                        {"name": "5.0.1-beta0", "commit": "09cae4e1bd838efcb862d45bfc61ff074f849f9b"},
                        {"name": "5.0.0", "commit": "305729e4f67c239802d38eb2446c3cee8fc5276a"},
                        {"name": "5.0.0-beta0", "commit": "7ffd65ae4dd6a4a6c06ebff910326c1bc35c8f01"}];
-    params.stable = "5.0.2";
+    params.stable = "5.1.0";
     params.web_docs = [{name: "Quickstart", url: "/web/docs/project/quickstart"},
                         {name: "User Guide", url: "/web/docs/project/user_guide"}];
     params.pdf_docs = [{name: "Elements of MOM 5", filename: "MOM5_elements.pdf"},
