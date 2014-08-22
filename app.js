@@ -20,11 +20,11 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "MOM5.1 Ported to Fujitsu's FX10 Supercomputer",
+var NEWS_ITEMS = [{"title": "MOM Ported to Fujitsu's FX10 Supercomputer",
                    "author": "Marshall Ward",
                    "email": "marshall.ward@anu.edu.au",
                    "date": "August 21, 2014",
-                   "block": "<p>As part of a collaboration between NCI (nci.org.au) and Fujitsu, MOM has been updated to run on Fujitsu's FX10 Supercomputers. This work will carry across to other SPARC-based platforms such as the <a href=\"http://www.fujitsu.com/global/about/businesspolicy/tech/k/\">K Computer</a>. It give us the opportunity to run MOM under Fujitsu's highly scalable Tofu interconnect system.</p>", 
+                   "block": "<p>As part of a collaboration between <a href=\"http://nci.org.au\">NCI</a> and Fujitsu, MOM has been updated to run on Fujitsu's FX10 Supercomputers. This work will carry across to other SPARC-based platforms such as the <a href=\"http://www.fujitsu.com/global/about/businesspolicy/tech/k/\">K Computer</a>. It give us the opportunity to run MOM under Fujitsu's highly scalable Tofu interconnect system.</p>", 
                    "link":  "/web/news/mom-on-fx10"},
                    {"title": "MOM 5.1.0 Released",
                    "author": "Stephen Griffies",
