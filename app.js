@@ -184,6 +184,7 @@ app.get("/web/news/cobalt-a-mom-based-ecosystem-model", render_news);
 app.get("/web/news/model-development-lab-upgrade", render_news);
 app.get("/web/news/new-website-features", render_news);
 app.get("/web/news/mom-5.1.0-released", render_news);
+app.get("/web/news/mom-on-fx10", render_news);
 
 app.get("/", function (req, res) { res.redirect("/web"); });
 
