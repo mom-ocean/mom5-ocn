@@ -46,16 +46,13 @@ block content
 
             p The complete distribution of #{project} includes some large data files used for testing and examples. To save your bandwidth and keep source code checkouts fast, the data files are managed in a slightly different way to source code files.
 
-            p When you download #{project} using git, you will notice certain files are actually symlinks, for example
+            p All of the data files are hosted <a href="https://climate-cms.nci.org.au/repository/entry/show/Data+Repository/Other+Data+at+NCI/MOM+Test+Data">here</a> by the <a href="http://www.climatescience.org.au/">ARC Centre of Excellence for Climate System Science</a>.
 
-            pre foo.nc -> ../../.git/annex/objects/jK/v7/WORM-s16009120-m1337754158--foo.nc/WORM-s16009120-m1337754158--foo.nc
 
-            p These files are managed by <a href="http://git-annex.branchable.com/">git-annex</a>, which allows the files to be kept under version control without needing to be downloaded every time the source code is cloned. As such, these symlinks will be "broken" when you first checkout the code.
+            p The files can be downloaded manually into the data/archives directory or using a helper script:
 
-            p The contents of these files are stored in a cloud annex, using <a href="http://aws.amazon.com/s3">Amazon S3</a>. To access the files you need to download each file into a local annex. Before downloading any files it is recommended to run the following command to tell git not to bother trying to download the data from GitHub (since the data is not there anyway).
+            pre ./data/get_exp_data.py <filename>
 
-            pre git config remote.origin.annex-ignore true
-            
-            p To download a particular file from the cloud annex, run the following command, replacing foo.nc with the file you want to get.
+            p However, the preferred method is to download the necessary input data automatically when running a test case, for example:
 
-            pre git annex get foo.nc
+            pre ./MOM_run --platform PLATFORM_ID --type MODEL_TYPE --experiment TEST_CASE --download_input_data

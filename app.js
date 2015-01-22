@@ -77,8 +77,7 @@ var base_params = function () {
                        {name: "Test Case: Coupled Ocean", filename: "testcase_ocean_cpld.pdf"},
                        {name: "Test Case: Solo Ocean", filename: "testcase_ocean_solo.pdf"}
                        ];
-    params.other_docs = [{name: "Using Git", url: "/web/docs/git"},
-                         {name: "Using Git Annxes", url: "/web/docs/git-annex"}];
+    params.other_docs = [{name: "Using Git", url: "/web/docs/git"}];
     params.github = "mom";
     params.news_items = NEWS_ITEMS;
     params.namelists = all_namelists;
@@ -160,11 +159,6 @@ var git = function (req, res) {
     render("git", req, res);
 };
 
-var git_annex = function (req, res) {
-    render("git_annex", req, res);
-};
-
-
 // Setup routes;
 
 app.get("/web", root);
@@ -177,7 +171,6 @@ app.get("/web/data", data);
 app.get("/web/docs/project/quickstart", quickstart);
 app.get("/web/docs/project/user_guide", user_guide);
 app.get("/web/docs/git", git);
-app.get("/web/docs/git-annex", git_annex);
 app.get("/web/docs", docs);
 
 app.get("/web/news/cobalt-a-mom-based-ecosystem-model", render_news);
