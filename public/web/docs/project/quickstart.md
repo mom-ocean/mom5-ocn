@@ -59,8 +59,6 @@ To run a `TEST_CASE`
 
 This will attempt to automatically download the necessary input data for your experiment. The [download instructions](http://www.mom-ocean.org/web/downloads) page has further information about downloading the input data.
 
-If you do not have the right input data in the `WORKDIR` for the `TEST_CASE` the above command would ask you to download it and try again. You may need to specify the number of processor for the `TEST_CASE`, in that case the above command errors out with the right info. Note: The script `exp/preprocessing.csh` is called by the `MOM_run.csh` to modify the mom4p1 namelists of these old test cases to make them compatible with MOM5. The results go into `WORKDIR`.
-
 ### Notes
 
 * The scripts have been tested fully only with Intel Fortran and PGI compilers on ia64 platform. They are partially tested  with pathscale compiler on x86\_64 and also gfortran4.3 compiler on Core2Duo processor. 
