@@ -57,6 +57,8 @@ To run a `TEST_CASE`
                 
     $ ./MOM_run.csh --platform PLATFORM_ID --type MODEL_TYPE  --experiment TEST_CASE --download_input_data
 
+This will attempt to automatically download the necessary input data for your experiment. The [download instructions](http://www.mom-ocean.org/web/downloads) page has further information about downloading the input data.
+
 If you do not have the right input data in the `WORKDIR` for the `TEST_CASE` the above command would ask you to download it and try again. You may need to specify the number of processor for the `TEST_CASE`, in that case the above command errors out with the right info. Note: The script `exp/preprocessing.csh` is called by the `MOM_run.csh` to modify the mom4p1 namelists of these old test cases to make them compatible with MOM5. The results go into `WORKDIR`.
 
 ### Notes
