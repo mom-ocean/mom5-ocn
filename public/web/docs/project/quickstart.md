@@ -74,10 +74,9 @@ This will attempt to automatically download the necessary input data for your ex
 
 ## How to prepare input data
    
-The input data needed to run the selected experiments (tests) that are included in this release are available in the `data/` directory.
+The input data needed to run the selected experiments (tests) that are in this release need to be downloaded into the `data/` directory. This can done automatically or manually, See [download instructions](http://www.mom-ocean.org/web/downloads) for details. 
    
 Note that data in `ASCII/`, `HISTORY/`, `RESTART/` directories are NOT needed for running experiments. They are the outputs of the experiments and are provided for the purpose of comparing your results with results produced at GFDL. Tools are provided so that users can create data from scratch for their own experiments. For more details refer to `src/preprocessing`.
-      
 
 ## Examine the output
    
@@ -85,7 +84,7 @@ To keep the runscript simple all output files of a model run will be in the work
      
 * ascii file with `.fms.out` extension: the description of the setup of the run and verbose comments printed out during the run.
 * restart files in `RESTART` directory: the model fields necessary to initialize future runs of the model.
-* history files with `.nc.tar` extension: output of the model, both averaged over specified time intervals and snapshots.
+* history files with `.nc` or `.nc.tar` extension: output of the model, both averaged over specified time intervals and snapshots.
    
 The ascii file contains everything written to the screen during model execution. The total time for model execution as well as the times of separate modules are reported here. All `.tar` files should be decompressed for viewing. The decompress command is:
      
