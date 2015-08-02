@@ -20,7 +20,13 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "MOM Ported to Fujitsu's FX10 Supercomputer",
+var NEWS_ITEMS = [ {"title": "Global quarter degree model configuration released",
+                   "author": "Nic Hannah",
+                   "email": "nicjhannah@gmail.com",
+                   "date": "August 2, 2015",
+                   "block": "<p>Researchers at the <a href=https://www.climatescience.org.au/>ARC Centre for Excellence in Climate System Science</a> have released a 0.25 degree global model configuration for MOM 5. This has been added to the test case suite. A beautiful animation created using this configuration can be seen <a href=\"https://www.youtube.com/watch?v=XZOrt7TWeKg\">here</a>.</p>",
+                   "link":  "/web/news/quarter-degree-test-case"},
+                  {"title": "MOM Ported to Fujitsu's FX10 Supercomputer",
                    "author": "Marshall Ward",
                    "email": "marshall.ward@anu.edu.au",
                    "date": "August 21, 2014",
@@ -185,6 +191,8 @@ app.get("/web/news/model-development-lab-upgrade", render_news);
 app.get("/web/news/new-website-features", render_news);
 app.get("/web/news/mom-5.1.0-released", render_news);
 app.get("/web/news/mom-on-fx10", render_news);
+app.get("/web/news/quarter-degree-test-case", render_news);
+
 
 app.get("/", function (req, res) { res.redirect("/web"); });
 
