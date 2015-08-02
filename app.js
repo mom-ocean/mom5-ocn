@@ -20,7 +20,13 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [ {"title": "Global quarter degree configuration released",
+var NEWS_ITEMS = [{"title": "All model test cases now running on Jenkins",
+                   "author": "Nic Hannah",
+                   "email": "nicjhannah@gmail.com",
+                   "date": "August 2, 2015",
+                   "block": "<p>A <a href=\"https://climate-cms.nci.org.au/jenkins/job/mom-ocean.org/\">Jenkins server</a> running on <a href=\"http://nci.org.au\">NCI</a> machines is now routinely compiling and running all available MOM 5 test cases. The <a href=\"https://climate-cms.nci.org.au/jenkins/job/mom-ocean.org/job/MOM_compile/lastBuild/console\">build logs</a> of these tests can be useful for comparison and debugging</p>",
+                   "link":  "/web/news/jenkins-continuous-integration"},
+                  {"title": "Global quarter degree configuration released",
                    "author": "Nic Hannah",
                    "email": "nicjhannah@gmail.com",
                    "date": "August 2, 2015",
@@ -185,6 +191,7 @@ app.get("/web/news/new-website-features", render_news);
 app.get("/web/news/mom-5.1.0-released", render_news);
 app.get("/web/news/mom-on-fx10", render_news);
 app.get("/web/news/quarter-degree-test-case", render_news);
+app.get("/web/news/jenkins-continuous-integration", render_news);
 
 
 app.get("/", function (req, res) { res.redirect("/web"); });
