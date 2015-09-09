@@ -22,23 +22,28 @@
               li(role="presentation")
                 a(role="menuitem", href="/web/docs") Documentation Home
               li.divider(role="presentation")
+
               li(role="presentation")
                 p.nav-header(role="menuitem") Web Documents
               each doc in web_docs
                 li(role="presentation")
                   a(role="menuitem", href="#{doc.url}") #{doc.name}
               li.divider(role="presentation")
+
               li(role="presentation")
                 p.nav-header(role="menuitem") Technical Documents
               each doc in test_case_docs
                 li(role="presentation")
                   a(role="menuitem", href="/web/docs/project/#{doc.filename}") #{doc.name}
               li.divider(role="presentation")
+
+              li(role="presentation")
                 p.nav-header(role="menuitem") MOM Foundations
               each doc in manual_docs
                 li(role="presentation")
                   a(role="menuitem", href="/web/docs/project/#{doc.filename}") #{doc.name}
               li.divider(role="presentation")
+
               li(role="presentation")
                 p.nav-header(role="menuitem") Other Documents
               each doc in other_docs
