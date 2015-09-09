@@ -81,13 +81,17 @@ var base_params = function () {
     params.stable = "5.1.0";
     params.web_docs = [{name: "Quickstart", url: "/web/docs/project/quickstart"},
                         {name: "User Guide", url: "/web/docs/project/user_guide"}];
-    params.pdf_docs = [{name: "Elements of MOM 5", filename: "MOM5_elements.pdf"},
-                       {name: "MOM 4 Technical Guide", filename: "MOM4_guide.pdf"},
-                       {name: "Test Case: Atlantic", filename: "testcase_atl_regional.pdf"},
+    params.test_case_docs = [{name: "Test Case: Atlantic", filename: "testcase_atl_regional.pdf"},
                        {name: "Test Case: Baltic", filename: "testcase_baltic.pdf"},
                        {name: "Test Case: ICCM", filename: "testcase_ICCM.pdf"},
                        {name: "Test Case: Coupled Ocean", filename: "testcase_ocean_cpld.pdf"},
                        {name: "Test Case: Solo Ocean", filename: "testcase_ocean_solo.pdf"}
+                       ];
+    params.manual_docs = [{name: "MOM5 Manual", filename: "MOM5_manual.pdf"},
+                       {name: "MOM4p1 Manual", filename: "MOM4p1_manual.pdf"},
+                       {name: "MOM4 Manual", filename: "MOM4_manual.pdf"},
+                       {name: "MOM3 Manual", filename: "MOM3_manual.pdf"},
+                       {name: "MOM2 Manual", filename: "MOM2_manual.pdf"},
                        ];
     params.other_docs = [{name: "Using Git", url: "/web/docs/git"}];
     params.github = "mom";

@@ -5,13 +5,21 @@ block content
         .panel-heading
             h2 Documentation
         .panel-body
-            h2 #{project} Project Docs
+            h2 #{project} Technical Documents
 
             ul
                 each doc in web_docs
                     li
                         a(href="#{doc.url}") #{doc.name}
-                each doc in pdf_docs
+                each doc in test_case_docs
+                    li <a href="docs/project/#{doc.filename}")>#{doc.name}</a> [PDF]
+
+            h2 #{project} MOM Foundations
+
+            p The following documents provide a description of the physical, mathematical, numerical, and computational foundations for the various versions of MOM.  They are provided here partly for their historical relevance, as well as for their pedagogical value.
+
+            ul
+                each doc in manual_docs
                     li <a href="docs/project/#{doc.filename}")>#{doc.name}</a> [PDF]
 
             h2 Model Development Lab Docs
