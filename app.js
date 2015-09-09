@@ -91,7 +91,7 @@ var base_params = function () {
                        {name: "MOM4p1 Manual", filename: "MOM4p1_manual.pdf"},
                        {name: "MOM4 Manual", filename: "MOM4_manual.pdf"},
                        {name: "MOM3 Manual", filename: "MOM3_manual.pdf"},
-                       {name: "MOM2 Manual", filename: "MOM2_manual.pdf"},
+                       {name: "MOM2 Manual", filename: "MOM2_manual.pdf"}
                        ];
     params.other_docs = [{name: "Using Git", url: "/web/docs/git"}];
     params.github = "mom";
