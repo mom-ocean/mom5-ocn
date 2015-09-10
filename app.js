@@ -92,7 +92,7 @@ var base_params = function () {
                        {name: "MOM4 Manual", filename: "MOM4_manual.pdf"},
                        {name: "MOM3 Manual", filename: "MOM3_manual.pdf"},
                        {name: "MOM2 Manual", filename: "MOM2_manual.pdf"},
-                       {name: "MOM1 README", filename: "MOM1_READ_ME.txt"},
+                       {name: "MOM1 README", filename: "MOM1_READ_ME.pdf"},
                        {name: "Cox 1984 Tech Report", filename: "Cox_1984_GFDL_Tech_Report_1.pdf"}
                        ];
     params.other_docs = [{name: "Using Git", url: "/web/docs/git"}];
