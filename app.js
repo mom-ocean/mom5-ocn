@@ -87,7 +87,8 @@ var base_params = function () {
                        {name: "Test Case: Coupled Ocean", filename: "testcase_ocean_cpld.pdf"},
                        {name: "Test Case: Solo Ocean", filename: "testcase_ocean_solo.pdf"}
                        ];
-    params.manual_docs = [{name: "MOM5 Manual", filename: "MOM5_manual.pdf"},
+    params.manual_docs = [{name: "MOM History", filename: "mom_history_v15.09.05.pdf"},
+                       {name: "MOM5 Manual", filename: "MOM5_manual.pdf"},
                        {name: "MOM4p1 Manual", filename: "MOM4p1_manual.pdf"},
                        {name: "MOM4 Manual", filename: "MOM4_manual.pdf"},
                        {name: "MOM3 Manual", filename: "MOM3_manual.pdf"},
