@@ -20,7 +20,13 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "All model test cases now running on Jenkins",
+var NEWS_ITEMS = [{"title": "MOM historical documents and code published",
+                   "author": "Stephen Griffies",
+                   "email": "stephen.griffies@noaa.gov",
+                   "date": "October 21, 2015",
+                   "block": "<p>MOM traces its lineage back to the 1960s.  During its 50+ year lifetime, there have been many versions of the code along with associated documentation.  We have recently pulled together the various <a href=\"http://mom-ocean.org/web/docs\">MOM Manuals</a>, hoping that these documents offer some pedagogical value to those interested in ocean model fundamentals. MOM source codes going as far back as MOM1 has also be published on <a href=\"https://github.com/BreakawayLabs\">Github</a>. Addtionally, a group of GFDL MOM developers have composed <a href=\"http://mom-ocean.org/web/docs/project/mom_history_v15.09.05.pdf\">a historical introduction to MOM</a> offering their perspectives on MOM's impact through the years on oceanography and climate science.</p>",
+                   "link":  "/web/news/mom-history"},
+                  {"title": "All model test cases now running on Jenkins",
                    "author": "Nic Hannah",
                    "email": "nicjhannah@gmail.com",
                    "date": "August 2, 2015",
@@ -199,7 +205,7 @@ app.get("/web/news/mom-5.1.0-released", render_news);
 app.get("/web/news/mom-on-fx10", render_news);
 app.get("/web/news/quarter-degree-test-case", render_news);
 app.get("/web/news/jenkins-continuous-integration", render_news);
-
+app.get("/web/news/mom-history", render_news);
 
 app.get("/", function (req, res) { res.redirect("/web"); });
 
