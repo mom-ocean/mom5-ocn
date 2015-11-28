@@ -20,7 +20,13 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "MOM historical documents and code published",
+var NEWS_ITEMS = [{"title": "Running MOM5 on Amazon EC2",
+                   "author": "Nic Hannah",
+                   "email": "nicjhannah@gmail.com",
+                   "date": "November 28, 2015",
+                   "block": "<p><a href=\"https://nh.id.au\">Nic Hannah</a> has written a new <a href=\"http://nh.id.au/run-an-ocean-model-in-30-mins.html>\">blog post</a> about getting MOM5 test cases running on an Amazon Elastic Cloud Computing machine. This can be very useful for new users to get MOM5 running because it avoids the usual difficulties to do with configuring the environment on a new machine.</p>",
+                   "link":  "/web/news/mom-on-amazon-ec2"},
+                   {"title": "MOM historical documents and code published",
                    "author": "Stephen Griffies",
                    "email": "stephen.griffies@noaa.gov",
                    "date": "October 21, 2015",
@@ -206,7 +212,7 @@ app.get("/web/news/mom-on-fx10", render_news);
 app.get("/web/news/quarter-degree-test-case", render_news);
 app.get("/web/news/jenkins-continuous-integration", render_news);
 app.get("/web/news/mom-history", render_news);
-
+app.get("/web/news/mom-on-amazon-ec2", render_news);
 app.get("/", function (req, res) { res.redirect("/web"); });
 
 
