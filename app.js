@@ -20,10 +20,17 @@ var md = function(text) {
 var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
-var NEWS_ITEMS = [{"title": "Running MOM5 on Amazon EC2",
+
+var NEWS_ITEMS = [{"title": "Stunning Southern Ocean Visualisation",
                    "author": "Nic Hannah",
                    "email": "nicjhannah@gmail.com",
                    "date": "November 28, 2015",
+                   "block": "<p>Researchers and Engineers at the <a href=\"https://www.climatescience.org.au\">ARC CoE for Climate System Science</a>, <a href=\"http://nf.nci.org.au/facilities/vizlab\">NCI Vizlab</a>, <a href=\"http://www.gfdl.noaa.gov/\">NOAA/GFDL</a>, <a href=\"http://www.breakawaylabs.com.au/\">Breakaway Labs</a>, and <a href=\"http://csiro.au/\">CSIRO</a> have released a <a href=\"https://www.youtube.com/watch?v=8VMSF28J9H4\">beautiful visualisation of the Southern Ocean</a>. The dataset was created using MOM5 in a 0.1 degree global configuration. This configuration will be released to the community as a standard MOM5 test case in due course.</p>",
+                   "link":  "/web/news/southern-ocean-visualisation"},
+                  {"title": "Running MOM5 on Amazon EC2",
+                   "author": "Nic Hannah",
+                   "email": "nicjhannah@gmail.com",
+                   "date": "November 27, 2015",
                    "block": "<p><a href=\"http://nh.id.au\">Nic Hannah</a> has written a new <a href=\"http://nh.id.au/run-an-ocean-model-in-30-mins.html\">blog post</a> about getting MOM5 test cases running on an Amazon Elastic Cloud Computing machine. This can be very useful for new users to get MOM5 running, it avoids the usual difficulties to do with configuring the environment on a new machine.</p>",
                    "link":  "/web/news/mom-on-amazon-ec2"},
                    {"title": "MOM historical documents and code published",
@@ -213,6 +220,7 @@ app.get("/web/news/quarter-degree-test-case", render_news);
 app.get("/web/news/jenkins-continuous-integration", render_news);
 app.get("/web/news/mom-history", render_news);
 app.get("/web/news/mom-on-amazon-ec2", render_news);
+app.get("/web/news/southern-ocean-visualisation", render_news);
 app.get("/", function (req, res) { res.redirect("/web"); });
 
 
