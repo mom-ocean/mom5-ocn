@@ -115,7 +115,7 @@ var base_params = function () {
                        {name: "MOM1 Manual", filename: "MOM1_manual.pdf"},
                        {name: "Cox 1984 Tech Report", filename: "Cox_1984_GFDL_Tech_Report_1.pdf"}
                        ];
-    params.other_docs = [{name: "Contributing to MOM", url: "/web/docs/contributing"},
+    params.other_docs = [{name: "Contributing to MOM", url: "/web/docs/project/contributing"},
                          {name: "Using Git", url: "/web/docs/git"}];
     params.github = "mom";
     params.news_items = NEWS_ITEMS;
@@ -198,6 +198,10 @@ var git = function (req, res) {
     render("git", req, res);
 };
 
+var contributing = function (req, res) {
+    render("contributing", req, res);
+};
+
 // Setup routes;
 
 app.get("/web", root);
@@ -209,6 +213,7 @@ app.get("/web/namelists", namelists);
 app.get("/web/data", data);
 app.get("/web/docs/project/quickstart", quickstart);
 app.get("/web/docs/project/user_guide", user_guide);
+app.get("/web/docs/project/contributing", contributing);
 app.get("/web/docs/git", git);
 app.get("/web/docs", docs);
 
