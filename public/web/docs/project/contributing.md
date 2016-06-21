@@ -18,9 +18,7 @@ Go to the [MOM5 GitHub page](https://github.com/BreakawayLabs/mom) and click on 
 
 ### Step 3: fork MOM5 and download your new repository
 
-Once you've logged in to GitHub go to the [MOM5 GitHub page](https://github.com/BreakawayLabs/mom) and click on 'fork' in the top right hand corner of the page. Here's an image from [Hisham's blog](http://hisham.hm/2016/01/01/how-to-make-a-pull-request-on-github-a-quick-tutorial/).
-
-![Image of github fork button](http://hisham.hm/img/posts/github-fork.png)
+Once you've logged in to GitHub go to the [MOM5 GitHub page](https://github.com/BreakawayLabs/mom) and click on 'fork' in the top right hand corner of the page. [This image](http://hisham.hm/img/posts/github-fork.png) from [Hisham's blog](http://hisham.hm/2016/01/01/how-to-make-a-pull-request-on-github-a-quick-tutorial/) shows the button location.
 
 This will create your own independent copy of the MOM5 repository within your GitHub account. Now it's time to download the new repository and make some changes. To download the repository open a shell/terminal and type:
 
@@ -57,9 +55,7 @@ Your changes should now be visible on your MOM5 fork GitHub page.
 
 ### Step 6: make the pull request
 
-This is the last step! Once you've pushed the code changes go to the GitHub page for your MOM5 for and you should see a button "compare & pull request". Click on this, review your additions/changes and then click on the confirm button.
-
-![Image of github pull request](http://hisham.hm/img/posts/github-comparepr.png)
+This is the last step! Once you've pushed the code changes go to the GitHub page for your MOM5 for and you should see a button "compare & pull request". Click on this, review your additions/changes and then click on the confirm button. Once again [this image](http://hisham.hm/img/posts/github-comparepr.png) shows the location of the button.
 
 ## Getting Help
 
