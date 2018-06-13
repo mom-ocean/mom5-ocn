@@ -20,7 +20,14 @@ var all_namelists = require('./all_namelists.json');
 var data_paths = require("./data_paths.json");
 
 
-var NEWS_ITEMS = [{"title": "Stunning Southern Ocean Visualisation",
+var NEWS_ITEMS = [
+                   {"title": "MOM historical document updated",
+                   "author": "Stephen Griffies",
+                   "email": "stephen.griffies@noaa.gov",
+                   "date": "June 14, 2018",
+                   "block": "<p>An updated version of <a href=\"/web/docs/project/mom_history_2017.09.19.pdf\">a historical introduction to MOM</a> is now available.</p>",
+                   "link":  "/web/news/mom-history"},
+                  {"title": "Stunning Southern Ocean Visualisation",
                    "author": "Nic Hannah",
                    "email": "nicjhannah@gmail.com",
                    "date": "November 28, 2015",
@@ -105,7 +112,7 @@ var base_params = function () {
                        {name: "Test Case: Coupled Ocean", filename: "testcase_ocean_cpld.pdf"},
                        {name: "Test Case: Solo Ocean", filename: "testcase_ocean_solo.pdf"}
                        ];
-    params.manual_docs = [{name: "MOM History", filename: "mom_history_v15.09.05.pdf"},
+    params.manual_docs = [{name: "MOM History", filename: "mom_history_2017.09.19.pdf"},
                        {name: "MOM5 Manual", filename: "MOM5_manual.pdf"},
                        {name: "MOM4p1 Manual", filename: "MOM4p1_manual.pdf"},
                        {name: "MOM4 Manual", filename: "MOM4_manual.pdf"},
