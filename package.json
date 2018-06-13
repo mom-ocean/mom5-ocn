@@ -9,6 +9,5 @@
     "jade": "0.35.x",
     "mongoose": "3.6.x",
     "marked": "0.2.9",
-    "newrelic": "1.0.0"
   }
 }
