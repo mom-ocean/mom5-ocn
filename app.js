@@ -43,7 +43,7 @@ var NEWS_ITEMS = [
                    "author": "Stephen Griffies",
                    "email": "stephen.griffies@noaa.gov",
                    "date": "October 21, 2015",
-                   "block": "<p>MOM traces its lineage back to the 1960s.  During its 50+ year lifetime, there have been many versions of the code along with associated documentation.  We have recently pulled together the various <a href=\"http://mom-ocean.org/web/docs\">MOM Manuals</a>, hoping that these documents offer some pedagogical value to those interested in ocean model fundamentals. MOM source codes going as far back as MOM1 has also be published on <a href=\"https://github.com/BreakawayLabs\">Github</a>. Addtionally, a group of GFDL MOM developers have composed <a href=\"http://mom-ocean.org/web/docs/project/mom_history_v15.09.05.pdf\">a historical introduction to MOM</a> offering their perspectives on MOM's impact through the years on oceanography and climate science.</p>",
+                   "block": "<p>MOM traces its lineage back to the 1960s.  During its 50+ year lifetime, there have been many versions of the code along with associated documentation.  We have recently pulled together the various <a href=\"/web/docs\">MOM Manuals</a>, hoping that these documents offer some pedagogical value to those interested in ocean model fundamentals. MOM source codes going as far back as MOM1 has also be published on <a href=\"https://github.com/BreakawayLabs\">Github</a>. Addtionally, a group of GFDL MOM developers have composed <a href=\"/web/docs/project/mom_history_v15.09.05.pdf\">a historical introduction to MOM</a> offering their perspectives on MOM's impact through the years on oceanography and climate science.</p>",
                    "link":  "/web/news/mom-history"},
                   {"title": "All model test cases now running on Jenkins",
                    "author": "Nic Hannah",
@@ -93,9 +93,11 @@ var NEWS_ITEMS = [
 
 var base_params = function () {
     var params = {};
+    params.host = app.get('host')
+    params.repo = "https://github.com/mom-ocean/MOM5/"
     params.project = "MOM";
     params.project_title = "Modular Ocean Model (MOM)";
-    params.project_desc = "MOM is a numerical ocean model based on the hydrostatic primitive equations. MOM development is led by scientists at <a href=\"http://www.gfdl.noaa.gov/ocean-model\">NOAA/GFDL</a> in collaboration with scientists worldwide. Version 5 of MOM (MOM5) is an open source project released under the <a href=\"https://github.com/BreakawayLabs/mom/blob/master/LICENSE\">GPL license</a>.";
+    params.project_desc = "MOM is a numerical ocean model based on the hydrostatic primitive equations. MOM development is led by scientists at <a href=\"http://www.gfdl.noaa.gov/ocean-model\">NOAA/GFDL</a> in collaboration with scientists worldwide. Version 5 of MOM (MOM5) is an open source project released under the <a href=\"" + params.repo + "/blob/master/LICENSE\">GPL license</a>.";
     params.project_about = "The Modular Ocean Model (MOM) is a hydrostatic generalized level coordinate numerical ocean code with mass conserving non-Boussinesq or volume conserving Boussinesq kinematics. The model equations are discretized with generalized horizontal coordinates on the sphere using either an Arakawa B-grid or C-grid. MOM has a broad suite of physical parameterizations, diagnostic features, test cases, and documentation. It has been utilized for research and operations from the coasts to the globe. MOM is institutionally sanctioned by NOAA's Geophysical Fluid Dynamics Laboratory (GFDL), where development is centered. Additional development and use occurs through hundreds of international scientists and engineers comprising the MOM community. MOM is free software distributed under GPLv2 and it is part of an open source community.";
     params.releases = [{"name": "5.1.0", "commit": "f406b4c5b4bbece3b0ae7f376a4ba90ea68ffb1e"},
                        {"name": "5.0.2", "commit": "8e524daedf27c1aaa35b4069efb38abc7575b4b5"},
@@ -147,6 +149,8 @@ var render_news = function(req, res) {
     var params = base_params();
     var template = "news";
 
+    var host = req.get('host')
+
     var news_item, i;
     for (i=0; i < NEWS_ITEMS.length; i++) {
       if (NEWS_ITEMS[i].link === req.route.path) {
@@ -154,7 +158,7 @@ var render_news = function(req, res) {
         params.title = NEWS_ITEMS[i].title;
         params.page = template;
         params.root_page = req.route.path.split("/")[2];
-        params.twitter_url = "http://www.mom-ocean.org" + req.route.path;
+        params.twitter_url = "http://" + host + req.route.path;
         res.render(template, params);
       }
     }
